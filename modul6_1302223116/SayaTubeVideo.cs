@@ -10,11 +10,13 @@ namespace modul6_1302223116
     public class SayaTubeVideo
     {
         private int id;
-        private string title;
+        public string title;
         private int playCount;
 
         public SayaTubeVideo(String tube)
-        {        
+        {
+            Debug.Assert(tube.Length < 200);
+            Debug.Assert(tube != null);
             Random random = new Random();
             this.title = tube;
             this.id = random.Next(10000,99999);
@@ -23,7 +25,19 @@ namespace modul6_1302223116
 
         public void IncreasePlayCount(int count)
         {
-            this.playCount += playCount;
+            Debug.Assert (count <= 25000000);
+            Debug.Assert(count > 0);
+            try
+            {
+                checked 
+                { 
+                    this.playCount += playCount; 
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine(exc.ToString());
+            }
                 
         }
 

@@ -15,6 +15,8 @@ internal class Program
         SayaTubeVideo video9 = new SayaTubeVideo("Review Film Tutorial Human Computer Interaction - Theo");
         SayaTubeVideo video10 = new SayaTubeVideo("Review Film Tutorial Database - Theo");
        
+        video1.IncreasePlayCount(5);
+
         video1.PrintVideoDetails();
         video2.PrintVideoDetails();
         video3.PrintVideoDetails();
@@ -25,5 +27,18 @@ internal class Program
         video8.PrintVideoDetails();            
         video9.PrintVideoDetails();
         video10.PrintVideoDetails();
+
+        SayaTubeUser user = new SayaTubeUser("Theo");
+        user.AddVideo(video1);
+        user.AddVideo(video2);
+        user.AddVideo(video3);
+        user.AddVideo(video4);
+        user.AddVideo(video5);
+        user.AddVideo(video6);
+        user.AddVideo(video7);
+        user.AddVideo(video8);
+        user.AddVideo(video9);
+        user.AddVideo(video10);
+        user.PrintAllVideoPlayCount();
     }
 }
